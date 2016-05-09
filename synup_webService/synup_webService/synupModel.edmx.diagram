@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a0c2b70eb256484a9fce4d67c0c3ef35" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="synupModel.Employee" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="synupModel.Task" Width="1.5" PointX="6.125" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="synupModel.TaskHistory" Width="1.5" PointX="3.5" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="synupModel.FK_idEmployee_TaskHistory" ManuallyRouted="false" />
+        <AssociationConnector Association="synupModel.FK_idTask_TaskHistory" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
