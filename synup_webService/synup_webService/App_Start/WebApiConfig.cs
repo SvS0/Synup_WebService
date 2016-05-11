@@ -27,7 +27,7 @@ namespace synup_webService
                 );
 
             var json = config.Formatters.JsonFormatter;
-            json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
+           // json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
             json.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             json.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
             json.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();

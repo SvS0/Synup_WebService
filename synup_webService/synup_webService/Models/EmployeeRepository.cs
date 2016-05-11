@@ -24,5 +24,10 @@ namespace synup_webService.Models
             return _dataContext.spEmpLogD(first, last).ToList();
         }
 
+        public static List<Employee> GetLogin(string username, string password)
+        {
+            return _dataContext.spLogin(username, password).ToList();
+        }
+
     }
 }

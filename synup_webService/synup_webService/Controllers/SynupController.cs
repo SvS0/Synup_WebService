@@ -89,6 +89,14 @@ namespace synup_webService.Controllers
             return response;
         }
 
+        [Route("api/Login/{username}/{password}")]
+        public HttpResponseMessage GetLogin(string username, string password)
+        {
+            var employee = EmployeeRepository.GetLogin(username, password);
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, employee);
+            return response;
+        }
+
         #endregion
 
         #region Team
