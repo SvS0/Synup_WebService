@@ -13,8 +13,7 @@ namespace synup_webService
     
     public partial class spTasklogI_Result
     {
-        public int id { get; set; }
-        public Nullable<int> id_team { get; set; }
+        public string id_team { get; set; }
         public string code { get; set; }
         public string description { get; set; }
         public string localization { get; set; }

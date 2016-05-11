@@ -12,24 +12,21 @@ namespace synup_webService
     using System;
     using System.Collections.Generic;
     
-    public partial class Task
+    public partial class Team
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Task()
+        public Team()
         {
-            this.TaskHistories = new HashSet<TaskHistory>();
+            this.Tasks = new HashSet<Task>();
+            this.TeamHistories = new HashSet<TeamHistory>();
         }
     
-        public string id_team { get; set; }
         public string code { get; set; }
         public string name { get; set; }
-        public System.DateTime priorityDate { get; set; }
-        public string description { get; set; }
-        public string localization { get; set; }
-        public string project { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TaskHistory> TaskHistories { get; set; }
-        public virtual Team Team { get; set; }
+        public virtual ICollection<Task> Tasks { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TeamHistory> TeamHistories { get; set; }
     }
 }

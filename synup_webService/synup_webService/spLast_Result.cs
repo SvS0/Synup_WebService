@@ -16,5 +16,6 @@ namespace synup_webService
         public Nullable<int> emplogId { get; set; }
         public Nullable<int> tasklogId { get; set; }
         public Nullable<int> taskhistlogId { get; set; }
+        public Nullable<int> teamlogId { get; set; }
     }
 }

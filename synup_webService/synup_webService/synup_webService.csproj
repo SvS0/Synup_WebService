@@ -34,6 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <IncludeIisSettings>false</IncludeIisSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -214,6 +215,9 @@
     <Compile Include="Employee.cs">
       <DependentUpon>synupModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeLog.cs">
+      <DependentUpon>synupModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -236,6 +240,9 @@
     <Compile Include="spEmpLogU_Result.cs">
       <DependentUpon>synupModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="spGetByDate_Result.cs">
+      <DependentUpon>synupModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="spLast_Result.cs">
       <DependentUpon>synupModel.tt</DependentUpon>
     </Compile>
@@ -246,6 +253,15 @@
       <DependentUpon>synupModel.tt</DependentUpon>
     </Compile>
     <Compile Include="spTasklogU_Result.cs">
+      <DependentUpon>synupModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spTeamLogD_Result.cs">
+      <DependentUpon>synupModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spTeamLogI_Result.cs">
+      <DependentUpon>synupModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spTeamLogU_Result.cs">
       <DependentUpon>synupModel.tt</DependentUpon>
     </Compile>
     <Compile Include="spTHisLogD_Result.cs">
@@ -279,6 +295,24 @@
     <Compile Include="TaskHistory.cs">
       <DependentUpon>synupModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="TaskHistoryLog.cs">
+      <DependentUpon>synupModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaskLog.cs">
+      <DependentUpon>synupModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Team.cs">
+      <DependentUpon>synupModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeamHistory.cs">
+      <DependentUpon>synupModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeamHistoryLog.cs">
+      <DependentUpon>synupModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeamLog.cs">
+      <DependentUpon>synupModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -308,6 +342,7 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <None Include="Properties\PublishProfiles\synup.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -329,7 +364,9 @@
       <DependentUpon>synupModel.edmx</DependentUpon>
       <LastGenOutput>synupModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

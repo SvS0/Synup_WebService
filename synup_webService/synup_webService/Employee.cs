@@ -17,18 +17,21 @@ namespace synup_webService
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Employee()
         {
-            this.TaskHistory = new HashSet<TaskHistory>();
+            this.TaskHistories = new HashSet<TaskHistory>();
+            this.TeamHistories = new HashSet<TeamHistory>();
         }
     
-        public int id { get; set; }
         public string nif { get; set; }
         public string name { get; set; }
         public string surname { get; set; }
         public string phone { get; set; }
         public string email { get; set; }
         public string adress { get; set; }
+        public string password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TaskHistory> TaskHistory { get; set; }
+        public virtual ICollection<TaskHistory> TaskHistories { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TeamHistory> TeamHistories { get; set; }
     }
 }
