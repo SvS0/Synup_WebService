@@ -20,7 +20,7 @@ namespace synup_webService.Controllers
         [Route("api/TaskUpdated/{employeeId}/{first}/{last}")]
         public HttpResponseMessage GetUpdatedTask(string employeeId, int first, int last)
         {
-            var task = TaskRepository.GetInsertedTask(employeeId, first, last);
+            var task = TaskRepository.GetUpdatedTask(employeeId, first, last);
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, task);
             return response;
         }
@@ -28,7 +28,7 @@ namespace synup_webService.Controllers
         [Route("api/TaskDeleted/{employeeId}/{first}/{last}")]
         public HttpResponseMessage GetDeletedTask(string employeeId, int first, int last)
         {
-            var task = TaskRepository.GetInsertedTask(employeeId, first, last);
+            var task = TaskRepository.GetDeletedTask(employeeId, first, last);
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, task);
             return response;
         }
@@ -48,7 +48,7 @@ namespace synup_webService.Controllers
         [Route("api/TaskHistoryUpdated/{employeeId}/{first}/{last}")]
         public HttpResponseMessage GetUpdatedTaskHistory(string employeeId, int first, int last)
         {
-            var taskHistory = TaskHistoryRepository.GetInsertedTaskHistory(employeeId, first, last);
+            var taskHistory = TaskHistoryRepository.GetUpdatedTaskHistory(employeeId, first, last);
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, taskHistory);
             return response;
         }
@@ -56,7 +56,7 @@ namespace synup_webService.Controllers
         [Route("api/TaskHistoryDeleted/{employeeId}/{first}/{last}")]
         public HttpResponseMessage GetDeletedTaskHistory(string employeeId, int first, int last)
         {
-            var taskHistory = TaskHistoryRepository.GetInsertedTaskHistory(employeeId, first, last);
+            var taskHistory = TaskHistoryRepository.GetDeletedTaskHistory(employeeId, first, last);
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, taskHistory);
             return response;
         }
@@ -91,6 +91,33 @@ namespace synup_webService.Controllers
 
         #endregion
 
+        #region Team
+        [Route("api/TeamInserted/{employeeId}/{first}/{last}")]
+        public HttpResponseMessage GetInsertedTeam(string employeeId, int first, int last)
+        {
+            var team = TeamRepository.GetInsertedTeam(employeeId, first, last);
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, team);
+            return response;
+        }
+
+        [Route("api/TeamUpdated/{employeeId}/{first}/{last}")]
+        public HttpResponseMessage GetUpdatedTeam(string employeeId, int first, int last)
+        {
+            var team = TeamRepository.GetUpdatedTeam(employeeId, first, last);
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, team);
+            return response;
+        }
+
+        [Route("api/TeamDeleted/{employeeId}/{first}/{last}")]
+        public HttpResponseMessage GetDeletedTeam(string employeeId, int first, int last)
+        {
+            var team = TeamRepository.GetDeletedTeam(employeeId, first, last);
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, team);
+            return response;
+        }
+
+        #endregion
+
         #region Last
 
         [Route("api/Last/{employeeId}")]
@@ -102,8 +129,6 @@ namespace synup_webService.Controllers
         }
 
         #endregion
-
-
 
     }
 }
