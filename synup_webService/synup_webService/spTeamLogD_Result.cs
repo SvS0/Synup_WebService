@@ -13,7 +13,7 @@ namespace synup_webService
     
     public partial class spTeamLogD_Result
     {
-        public string id_team { get; set; }
+        public string code { get; set; }
         public Nullable<int> name { get; set; }
     }
 }

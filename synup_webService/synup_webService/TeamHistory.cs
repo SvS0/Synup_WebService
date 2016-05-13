@@ -9,9 +9,10 @@
 
 namespace synup_webService
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     public partial class TeamHistory
     {
         public int id { get; set; }
@@ -19,8 +20,10 @@ namespace synup_webService
         public string id_team { get; set; }
         public System.DateTime entranceDay { get; set; }
         public Nullable<System.DateTime> exitDate { get; set; }
-    
+
+        [JsonIgnore]
         public virtual Employee Employee { get; set; }
+        [JsonIgnore]
         public virtual Team Team { get; set; }
     }
 }

@@ -594,7 +594,7 @@ warning 6002: The table/view 'synup.dbo.TeamHistoryLog' does not have a primary 
             <Parameter Name="first" Mode="In" Type="Int32" />
             <Parameter Name="last" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="spGetByDate" EntitySet="Employees" ReturnType="Collection(synupModel.Employee)">
+          <FunctionImport Name="spGetByDate" EntitySet="Tasks" ReturnType="Collection(synupModel.Task)">
             <Parameter Name="begin" Mode="In" Type="DateTime" />
             <Parameter Name="end" Mode="In" Type="DateTime" />
           </FunctionImport>
@@ -761,7 +761,7 @@ warning 6002: The table/view 'synup.dbo.TeamHistoryLog' does not have a primary 
           <Property Type="String" Name="project" Nullable="true" MaxLength="20" />
         </ComplexType>
         <ComplexType Name="spTeamLogD_Result">
-          <Property Type="String" Name="id_team" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="code" Nullable="false" MaxLength="10" />
           <Property Type="Int32" Name="name" Nullable="true" />
         </ComplexType>
         <ComplexType Name="spTeamLogI_Result">
