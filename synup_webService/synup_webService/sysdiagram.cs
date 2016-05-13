@@ -9,21 +9,15 @@
 
 namespace synup_webService
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-
-    public partial class TeamHistory
-    {
-        public int id { get; set; }
-        public string id_employee { get; set; }
-        public string id_team { get; set; }
-        public System.DateTime entranceDay { get; set; }
-        public Nullable<System.DateTime> exitDate { get; set; }
     
-        [JsonIgnore]
-        public virtual Employee Employee { get; set; }
-        [JsonIgnore]
-        public virtual Team Team { get; set; }
+    public partial class sysdiagram
+    {
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

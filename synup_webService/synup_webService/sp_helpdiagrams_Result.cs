@@ -11,15 +11,12 @@ namespace synup_webService
 {
     using System;
     
-    public partial class spEmpLogD_Result
+    public partial class sp_helpdiagrams_Result
     {
-        public string nif { get; set; }
-        public Nullable<int> name { get; set; }
-        public Nullable<int> surname { get; set; }
-        public Nullable<int> phone { get; set; }
-        public Nullable<int> email { get; set; }
-        public Nullable<int> adress { get; set; }
-        public Nullable<int> password { get; set; }
-        public Nullable<int> username { get; set; }
+        public string Database { get; set; }
+        public string Name { get; set; }
+        public int ID { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }

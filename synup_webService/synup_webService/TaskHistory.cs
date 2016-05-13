@@ -9,9 +9,10 @@
 
 namespace synup_webService
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     public partial class TaskHistory
     {
         public string id_employee { get; set; }
@@ -22,7 +23,9 @@ namespace synup_webService
         public byte isFinished { get; set; }
         public int id { get; set; }
     
+        [JsonIgnore]
         public virtual Employee Employee { get; set; }
+        [JsonIgnore]
         public virtual Task Task { get; set; }
     }
 }
