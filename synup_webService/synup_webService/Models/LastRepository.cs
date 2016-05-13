@@ -10,9 +10,9 @@ namespace synup_webService.Models
 
         static synupEntities _dataContext = new synupEntities();
 
-        public static List<spLast_Result> GetLast(int employeeId)
+        public static List<spLast_Result> GetLast()
         {
-            return _dataContext.spLast(employeeId).ToList();  
+            return _dataContext.spLast().ToList();  
         }
 
         public static void Submit()

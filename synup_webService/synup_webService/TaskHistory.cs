@@ -22,7 +22,7 @@ namespace synup_webService
         public string comment { get; set; }
         public byte isFinished { get; set; }
         public int id { get; set; }
-    
+
         [JsonIgnore]
         public virtual Employee Employee { get; set; }
         [JsonIgnore]

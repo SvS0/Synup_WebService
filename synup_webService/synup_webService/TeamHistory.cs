@@ -20,7 +20,7 @@ namespace synup_webService
         public string id_team { get; set; }
         public System.DateTime entranceDay { get; set; }
         public Nullable<System.DateTime> exitDate { get; set; }
-    
+
         [JsonIgnore]
         public virtual Employee Employee { get; set; }
         [JsonIgnore]
