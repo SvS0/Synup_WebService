@@ -220,7 +220,7 @@ namespace synup_webService
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Employee>("spEmpLogU", mergeOption, firstParameter, lastParameter);
         }
     
-        public virtual ObjectResult<spGetByDate_Result> spGetByDate(Nullable<System.DateTime> begin, Nullable<System.DateTime> end)
+        public virtual ObjectResult<Employee> spGetByDate(Nullable<System.DateTime> begin, Nullable<System.DateTime> end)
         {
             var beginParameter = begin.HasValue ?
                 new ObjectParameter("begin", begin) :
@@ -230,7 +230,20 @@ namespace synup_webService
                 new ObjectParameter("end", end) :
                 new ObjectParameter("end", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spGetByDate_Result>("spGetByDate", beginParameter, endParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Employee>("spGetByDate", beginParameter, endParameter);
+        }
+    
+        public virtual ObjectResult<Employee> spGetByDate(Nullable<System.DateTime> begin, Nullable<System.DateTime> end, MergeOption mergeOption)
+        {
+            var beginParameter = begin.HasValue ?
+                new ObjectParameter("begin", begin) :
+                new ObjectParameter("begin", typeof(System.DateTime));
+    
+            var endParameter = end.HasValue ?
+                new ObjectParameter("end", end) :
+                new ObjectParameter("end", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Employee>("spGetByDate", mergeOption, beginParameter, endParameter);
         }
     
         public virtual ObjectResult<spGetRankingEmployee_Result> spGetRankingEmployee(Nullable<System.DateTime> begin, Nullable<System.DateTime> end)

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9e9ab9d62b184e8981cbc4899f256c02" Name="Diagram1">
+      <Diagram DiagramId="f1f753672d3449ce80eabce1bd5b2799" Name="Diagram1">
         <EntityTypeShape EntityType="synupModel.Employee" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="synupModel.EmployeeLog" Width="1.5" PointX="3.75" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="synupModel.sysdiagram" Width="1.5" PointX="5.75" PointY="8.875" IsExpanded="true" />

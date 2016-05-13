@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="synupModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="synupModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="nif" />
@@ -329,7 +329,8 @@ warning 6002: The table/view 'synup.dbo.TeamHistoryLog' does not have a primary 
             <End Role="TeamHistory" EntitySet="TeamHistory" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="synupModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -593,7 +594,7 @@ warning 6002: The table/view 'synup.dbo.TeamHistoryLog' does not have a primary 
             <Parameter Name="first" Mode="In" Type="Int32" />
             <Parameter Name="last" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="spGetByDate" ReturnType="Collection(synupModel.spGetByDate_Result)">
+          <FunctionImport Name="spGetByDate" EntitySet="Employees" ReturnType="Collection(synupModel.Employee)">
             <Parameter Name="begin" Mode="In" Type="DateTime" />
             <Parameter Name="end" Mode="In" Type="DateTime" />
           </FunctionImport>
@@ -605,8 +606,7 @@ warning 6002: The table/view 'synup.dbo.TeamHistoryLog' does not have a primary 
             <Parameter Name="begin" Mode="In" Type="DateTime" />
             <Parameter Name="end" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="spLast" ReturnType="Collection(synupModel.spLast_Result)">
-          </FunctionImport>
+          <FunctionImport Name="spLast" ReturnType="Collection(synupModel.spLast_Result)" />
           <FunctionImport Name="spLogin" EntitySet="Employees" ReturnType="Collection(synupModel.Employee)">
             <Parameter Name="username" Mode="In" Type="String" />
             <Parameter Name="password" Mode="In" Type="String" />
@@ -959,17 +959,6 @@ warning 6002: The table/view 'synup.dbo.TeamHistoryLog' does not have a primary 
           <FunctionImportMapping FunctionImportName="spEmpLogU" FunctionName="synupModel.Store.spEmpLogU">
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="spGetByDate" FunctionName="synupModel.Store.spGetByDate">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="synupModel.spGetByDate_Result">
-                <ScalarProperty Name="id_team" ColumnName="id_team" />
-                <ScalarProperty Name="code" ColumnName="code" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="priorityDate" ColumnName="priorityDate" />
-                <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="localization" ColumnName="localization" />
-                <ScalarProperty Name="project" ColumnName="project" />
-              </ComplexTypeMapping>
-            </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="spGetRankingEmployee" FunctionName="synupModel.Store.spGetRankingEmployee">
             <ResultMapping>
