@@ -230,6 +230,7 @@
     <Compile Include="Models\LastRepository.cs" />
     <Compile Include="Models\TaskHistoryRepository.cs" />
     <Compile Include="Models\TaskRepository.cs" />
+    <Compile Include="Models\TeamHistoryRepository.cs" />
     <Compile Include="Models\TeamRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -274,6 +275,15 @@
       <DependentUpon>synupModel.tt</DependentUpon>
     </Compile>
     <Compile Include="spTeamLogU_Result.cs">
+      <DependentUpon>synupModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spTeHisLogD_Result.cs">
+      <DependentUpon>synupModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spTeHisLogI_Result.cs">
+      <DependentUpon>synupModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spTeHisLogU_Result.cs">
       <DependentUpon>synupModel.tt</DependentUpon>
     </Compile>
     <Compile Include="spTHisLogD_Result.cs">

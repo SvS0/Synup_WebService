@@ -10,19 +10,11 @@
 namespace synup_webService
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class TaskHistory
+    public partial class spTeHisLogI_Result
     {
-        public string id_employee { get; set; }
-        public string id_task { get; set; }
-        public Nullable<System.DateTime> startDate { get; set; }
-        public Nullable<System.DateTime> finishDate { get; set; }
-        public string comment { get; set; }
-        public byte isFinished { get; set; }
         public int id { get; set; }
-    
-        public virtual Employee Employee { get; set; }
-        public virtual Task Task { get; set; }
+        public string nif { get; set; }
+        public string code { get; set; }
     }
 }

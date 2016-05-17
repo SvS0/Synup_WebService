@@ -126,6 +126,34 @@ namespace synup_webService.Controllers
 
         #endregion
 
+        #region TeamHistory
+
+        [Route("api/TeamInserted/{employeeId:alpha}/{first}/{last}")]
+        public HttpResponseMessage GetInsertedTeamHistory(string employeeId, int first, int last)
+        {
+            var team = TeamHistoryRepository.GetInsertedTeamHistory(employeeId, first, last);
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, team);
+            return response;
+        }
+
+        [Route("api/TeamUpdated/{employeeId:alpha}/{first}/{last}")]
+        public HttpResponseMessage GetUpdatedTeamHistory(string employeeId, int first, int last)
+        {
+            var team = TeamHistoryRepository.GetUpdatedTeamHistory(employeeId, first, last);
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, team);
+            return response;
+        }
+
+        [Route("api/TeamDeleted/{employeeId:alpha}/{first}/{last}")]
+        public HttpResponseMessage GetDeletedTeamHistory(string employeeId, int first, int last)
+        {
+            var team = TeamHistoryRepository.GetDeletedTeamHistory(employeeId, first, last);
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, team);
+            return response;
+        }
+
+        #endregion
+
         #region Last
 
         [Route("api/Last")]
