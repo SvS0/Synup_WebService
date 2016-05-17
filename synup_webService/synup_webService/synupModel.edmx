@@ -755,6 +755,7 @@ warning 6002: The table/view 'synup.dbo.TeamHistoryLog' does not have a primary 
           <Property Type="Int32" Name="tasklogId" Nullable="true" />
           <Property Type="Int32" Name="taskhistlogId" Nullable="true" />
           <Property Type="Int32" Name="teamlogId" Nullable="true" />
+          <Property Type="Int32" Name="teamhistlogId" Nullable="true" />
         </ComplexType>
         <ComplexType Name="spLogin_Result">
           <Property Type="String" Name="nif" Nullable="false" MaxLength="9" />
@@ -1045,6 +1046,7 @@ warning 6002: The table/view 'synup.dbo.TeamHistoryLog' does not have a primary 
                 <ScalarProperty Name="tasklogId" ColumnName="tasklogId" />
                 <ScalarProperty Name="taskhistlogId" ColumnName="taskhistlogId" />
                 <ScalarProperty Name="teamlogId" ColumnName="teamlogId" />
+                <ScalarProperty Name="teamhistlogId" ColumnName="teamhistlogId" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
