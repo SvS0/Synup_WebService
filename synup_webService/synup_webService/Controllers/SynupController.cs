@@ -37,7 +37,7 @@ namespace synup_webService.Controllers
 
         #region TaskHistory
 
-        [Route("api/TaskHistoryInserted/{employeeId:alpha}/{first}/{last}")]
+        [Route("api/TaskHistoryInserted/{employeeId}/{first}/{last}")]
         public HttpResponseMessage GetInsertedTaskHistory(string employeeId, int first, int last)
         {
             var taskHistory = TaskHistoryRepository.GetInsertedTaskHistory(employeeId, first, last);
@@ -45,7 +45,7 @@ namespace synup_webService.Controllers
             return response;
         }
 
-        [Route("api/TaskHistoryUpdated/{employeeId:alpha}/{first}/{last}")]
+        [Route("api/TaskHistoryUpdated/{employeeId}/{first}/{last}")]
         public HttpResponseMessage GetUpdatedTaskHistory(string employeeId, int first, int last)
         {
             var taskHistory = TaskHistoryRepository.GetUpdatedTaskHistory(employeeId, first, last);
@@ -53,7 +53,7 @@ namespace synup_webService.Controllers
             return response;
         }
 
-        [Route("api/TaskHistoryDeleted/{employeeId:alpha}/{first}/{last}")]
+        [Route("api/TaskHistoryDeleted/{employeeId}/{first}/{last}")]
         public HttpResponseMessage GetDeletedTaskHistory(string employeeId, int first, int last)
         {
             var taskHistory = TaskHistoryRepository.GetDeletedTaskHistory(employeeId, first, last);
@@ -100,7 +100,7 @@ namespace synup_webService.Controllers
         #endregion
 
         #region Team
-        [Route("api/TeamInserted/{employeeId:alpha}/{first}/{last}")]
+        [Route("api/TeamInserted/{employeeId}/{first}/{last}")]
         public HttpResponseMessage GetInsertedTeam(string employeeId, int first, int last)
         {
             var team = TeamRepository.GetInsertedTeam(employeeId, first, last);
@@ -108,7 +108,7 @@ namespace synup_webService.Controllers
             return response;
         }
 
-        [Route("api/TeamUpdated/{employeeId:alpha}/{first}/{last}")]
+        [Route("api/TeamUpdated/{employeeId}/{first}/{last}")]
         public HttpResponseMessage GetUpdatedTeam(string employeeId, int first, int last)
         {
             var team = TeamRepository.GetUpdatedTeam(employeeId, first, last);
@@ -116,7 +116,7 @@ namespace synup_webService.Controllers
             return response;
         }
 
-        [Route("api/TeamDeleted/{employeeId:alpha}/{first}/{last}")]
+        [Route("api/TeamDeleted/{employeeId}/{first}/{last}")]
         public HttpResponseMessage GetDeletedTeam(string employeeId, int first, int last)
         {
             var team = TeamRepository.GetDeletedTeam(employeeId, first, last);
@@ -128,7 +128,7 @@ namespace synup_webService.Controllers
 
         #region TeamHistory
 
-        [Route("api/TeamHistoryInserted/{employeeId:alpha}/{first}/{last}")]
+        [Route("api/TeamHistoryInserted/{employeeId}/{first}/{last}")]
         public HttpResponseMessage GetInsertedTeamHistory(string employeeId, int first, int last)
         {
             var team = TeamHistoryRepository.GetInsertedTeamHistory(employeeId, first, last);
@@ -136,7 +136,7 @@ namespace synup_webService.Controllers
             return response;
         }
 
-        [Route("api/TeamHistoryUpdated/{employeeId:alpha}/{first}/{last}")]
+        [Route("api/TeamHistoryUpdated/{employeeId}/{first}/{last}")]
         public HttpResponseMessage GetUpdatedTeamHistory(string employeeId, int first, int last)
         {
             var team = TeamHistoryRepository.GetUpdatedTeamHistory(employeeId, first, last);
@@ -144,7 +144,7 @@ namespace synup_webService.Controllers
             return response;
         }
 
-        [Route("api/TeamHistoryDeleted/{employeeId:alpha}/{first}/{last}")]
+        [Route("api/TeamHistoryDeleted/{employeeId}/{first}/{last}")]
         public HttpResponseMessage GetDeletedTeamHistory(string employeeId, int first, int last)
         {
             var team = TeamHistoryRepository.GetDeletedTeamHistory(employeeId, first, last);
