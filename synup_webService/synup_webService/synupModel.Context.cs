@@ -264,7 +264,7 @@ namespace synup_webService
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spLast_Result>("spLast");
         }
     
-        public virtual ObjectResult<Employee> spLogin(string username, string password)
+        public virtual ObjectResult<spLogin_Result> spLogin(string username, string password)
         {
             var usernameParameter = username != null ?
                 new ObjectParameter("username", username) :
@@ -274,20 +274,7 @@ namespace synup_webService
                 new ObjectParameter("password", password) :
                 new ObjectParameter("password", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Employee>("spLogin", usernameParameter, passwordParameter);
-        }
-    
-        public virtual ObjectResult<Employee> spLogin(string username, string password, MergeOption mergeOption)
-        {
-            var usernameParameter = username != null ?
-                new ObjectParameter("username", username) :
-                new ObjectParameter("username", typeof(string));
-    
-            var passwordParameter = password != null ?
-                new ObjectParameter("password", password) :
-                new ObjectParameter("password", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Employee>("spLogin", mergeOption, usernameParameter, passwordParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spLogin_Result>("spLogin", usernameParameter, passwordParameter);
         }
     
         public virtual ObjectResult<Task> spTasklogD(string employeeId, Nullable<int> first, Nullable<int> last)

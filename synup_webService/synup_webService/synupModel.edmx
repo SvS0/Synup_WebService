@@ -625,7 +625,7 @@ warning 6002: The table/view 'synup.dbo.TeamHistoryLog' does not have a primary 
             <Parameter Name="end" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="spLast" ReturnType="Collection(synupModel.spLast_Result)" />
-          <FunctionImport Name="spLogin" EntitySet="Employees" ReturnType="Collection(synupModel.Employee)">
+          <FunctionImport Name="spLogin" ReturnType="Collection(synupModel.spLogin_Result)">
             <Parameter Name="username" Mode="In" Type="String" />
             <Parameter Name="password" Mode="In" Type="String" />
           </FunctionImport>
@@ -1051,6 +1051,18 @@ warning 6002: The table/view 'synup.dbo.TeamHistoryLog' does not have a primary 
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="spLogin" FunctionName="synupModel.Store.spLogin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="synupModel.spLogin_Result">
+                <ScalarProperty Name="nif" ColumnName="nif" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="adress" ColumnName="adress" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+              </ComplexTypeMapping>
+            </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="spTasklogD" FunctionName="synupModel.Store.spTasklogD">
           </FunctionImportMapping>
