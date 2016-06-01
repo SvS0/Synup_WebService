@@ -7,21 +7,44 @@ namespace synup_webService.Models
 {
     public class TeamRepository
     {
-        static synupEntities _dataContext = new synupEntities();
 
         public static List<Team> GetInsertedTeam(string employeeId, int first, int last)
         {
-            return _dataContext.spTeamLogI(employeeId, first, last).ToList();
+            List<Team> _teams;
+
+            using (var _dataContext = new synupEntities())
+            {
+                _teams = new List<Team>();
+                _teams = _dataContext.spTeamLogI(employeeId, first, last).ToList();
+            }
+
+            return _teams;
         }
 
         public static List<Team> GetUpdatedTeam(string employeeId, int first, int last)
         {
-            return _dataContext.spTeamLogU(employeeId, first, last).ToList();
+            List<Team> _teams;
+
+            using (var _dataContext = new synupEntities())
+            {
+                _teams = new List<Team>();
+                _teams = _dataContext.spTeamLogU(employeeId, first, last).ToList();
+            }
+
+            return _teams;
         }
 
         public static List<Team> GetDeletedTeam(string employeeId, int first, int last)
         {
-            return _dataContext.spTeamLogD(employeeId, first, last).ToList();
+            List<Team> _teams;
+
+            using (var _dataContext = new synupEntities())
+            {
+                _teams = new List<Team>();
+                _teams = _dataContext.spTeamLogD(employeeId, first, last).ToList();
+            }
+
+            return _teams;
         }
     }
 }

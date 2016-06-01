@@ -20,5 +20,7 @@ namespace synup_webService
         public string description { get; set; }
         public string localization { get; set; }
         public string project { get; set; }
+        public Nullable<int> priority { get; set; }
+        public Nullable<int> state { get; set; }
     }
 }

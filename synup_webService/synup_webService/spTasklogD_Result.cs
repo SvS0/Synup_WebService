@@ -18,7 +18,9 @@ namespace synup_webService
         public Nullable<int> description { get; set; }
         public Nullable<int> localization { get; set; }
         public Nullable<int> name { get; set; }
-        public Nullable<int> priorityDate { get; set; }
+        public System.DateTime priorityDate { get; set; }
         public Nullable<int> project { get; set; }
+        public Nullable<int> priority { get; set; }
+        public Nullable<int> state { get; set; }
     }
 }

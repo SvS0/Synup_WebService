@@ -14,7 +14,9 @@ namespace synup_webService
     public partial class spTeHisLogD_Result
     {
         public int id { get; set; }
-        public Nullable<int> nif { get; set; }
-        public Nullable<int> code { get; set; }
+        public Nullable<int> id_employee { get; set; }
+        public Nullable<int> id_team { get; set; }
+        public System.DateTime entranceDay { get; set; }
+        public Nullable<int> exitDate { get; set; }
     }
 }

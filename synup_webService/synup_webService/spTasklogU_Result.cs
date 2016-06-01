@@ -20,5 +20,7 @@ namespace synup_webService
         public string name { get; set; }
         public System.DateTime priorityDate { get; set; }
         public string project { get; set; }
+        public Nullable<int> priority { get; set; }
+        public Nullable<int> state { get; set; }
     }
 }

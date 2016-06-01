@@ -494,7 +494,7 @@ namespace synup_webService
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Team>("spTeamLogU", mergeOption, employeeIdParameter, firstParameter, lastParameter);
         }
     
-        public virtual ObjectResult<spTeHisLogD_Result> spTeHisLogD(string employeeId, Nullable<int> first, Nullable<int> last)
+        public virtual ObjectResult<TeamHistory> spTeHisLogD(string employeeId, Nullable<int> first, Nullable<int> last)
         {
             var employeeIdParameter = employeeId != null ?
                 new ObjectParameter("EmployeeId", employeeId) :
@@ -508,10 +508,10 @@ namespace synup_webService
                 new ObjectParameter("last", last) :
                 new ObjectParameter("last", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spTeHisLogD_Result>("spTeHisLogD", employeeIdParameter, firstParameter, lastParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TeamHistory>("spTeHisLogD", employeeIdParameter, firstParameter, lastParameter);
         }
     
-        public virtual ObjectResult<spTeHisLogI_Result> spTeHisLogI(string employeeId, Nullable<int> first, Nullable<int> last)
+        public virtual ObjectResult<TeamHistory> spTeHisLogD(string employeeId, Nullable<int> first, Nullable<int> last, MergeOption mergeOption)
         {
             var employeeIdParameter = employeeId != null ?
                 new ObjectParameter("EmployeeId", employeeId) :
@@ -525,10 +525,10 @@ namespace synup_webService
                 new ObjectParameter("last", last) :
                 new ObjectParameter("last", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spTeHisLogI_Result>("spTeHisLogI", employeeIdParameter, firstParameter, lastParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TeamHistory>("spTeHisLogD", mergeOption, employeeIdParameter, firstParameter, lastParameter);
         }
     
-        public virtual ObjectResult<spTeHisLogU_Result> spTeHisLogU(string employeeId, Nullable<int> first, Nullable<int> last)
+        public virtual ObjectResult<TeamHistory> spTeHisLogI(string employeeId, Nullable<int> first, Nullable<int> last)
         {
             var employeeIdParameter = employeeId != null ?
                 new ObjectParameter("EmployeeId", employeeId) :
@@ -542,7 +542,58 @@ namespace synup_webService
                 new ObjectParameter("last", last) :
                 new ObjectParameter("last", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spTeHisLogU_Result>("spTeHisLogU", employeeIdParameter, firstParameter, lastParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TeamHistory>("spTeHisLogI", employeeIdParameter, firstParameter, lastParameter);
+        }
+    
+        public virtual ObjectResult<TeamHistory> spTeHisLogI(string employeeId, Nullable<int> first, Nullable<int> last, MergeOption mergeOption)
+        {
+            var employeeIdParameter = employeeId != null ?
+                new ObjectParameter("EmployeeId", employeeId) :
+                new ObjectParameter("EmployeeId", typeof(string));
+    
+            var firstParameter = first.HasValue ?
+                new ObjectParameter("first", first) :
+                new ObjectParameter("first", typeof(int));
+    
+            var lastParameter = last.HasValue ?
+                new ObjectParameter("last", last) :
+                new ObjectParameter("last", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TeamHistory>("spTeHisLogI", mergeOption, employeeIdParameter, firstParameter, lastParameter);
+        }
+    
+        public virtual ObjectResult<TeamHistory> spTeHisLogU(string employeeId, Nullable<int> first, Nullable<int> last)
+        {
+            var employeeIdParameter = employeeId != null ?
+                new ObjectParameter("EmployeeId", employeeId) :
+                new ObjectParameter("EmployeeId", typeof(string));
+    
+            var firstParameter = first.HasValue ?
+                new ObjectParameter("first", first) :
+                new ObjectParameter("first", typeof(int));
+    
+            var lastParameter = last.HasValue ?
+                new ObjectParameter("last", last) :
+                new ObjectParameter("last", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TeamHistory>("spTeHisLogU", employeeIdParameter, firstParameter, lastParameter);
+        }
+    
+        public virtual ObjectResult<TeamHistory> spTeHisLogU(string employeeId, Nullable<int> first, Nullable<int> last, MergeOption mergeOption)
+        {
+            var employeeIdParameter = employeeId != null ?
+                new ObjectParameter("EmployeeId", employeeId) :
+                new ObjectParameter("EmployeeId", typeof(string));
+    
+            var firstParameter = first.HasValue ?
+                new ObjectParameter("first", first) :
+                new ObjectParameter("first", typeof(int));
+    
+            var lastParameter = last.HasValue ?
+                new ObjectParameter("last", last) :
+                new ObjectParameter("last", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TeamHistory>("spTeHisLogU", mergeOption, employeeIdParameter, firstParameter, lastParameter);
         }
     
         public virtual ObjectResult<TaskHistory> spTHisLogD(string employeeId, Nullable<int> first, Nullable<int> last)

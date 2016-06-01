@@ -8,31 +8,19 @@ namespace synup_webService.Models
     public class LastRepository
     {
 
-        static synupEntities _dataContext = new synupEntities();
-
         public static List<spLast_Result> GetLast()
         {
-            return _dataContext.spLast().ToList();  
+            List<spLast_Result> _lasts;
+
+            using (var _dataContext = new synupEntities())
+            {
+                _lasts = new List<spLast_Result>();
+                _lasts = _dataContext.spLast().ToList();
+            }
+
+            return _lasts;
         }
 
-        public static void Submit()
-        {
-            try
-            {
-                _dataContext.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                Console.Write(e.ToString());
-            }
-            finally
-            {
-                closeBD();
-            }
-        }
-        public static void closeBD()
-        {
-            _dataContext.Database.Connection.Close();
-        }
+
     }
 }

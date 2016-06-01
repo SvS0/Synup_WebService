@@ -1,4 +1,5 @@
 ﻿using synup_webService.Models;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -151,6 +152,23 @@ namespace synup_webService.Controllers
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, team);
             return response;
         }
+
+        [Route("api/TaskHistoryInsert/{employeeId}/{taskId}")]
+        public HttpResponseMessage GetInsertTeamHistory(string employeeId, string taskId)
+        {
+            var task = TaskHistoryRepository.InsertTeamHistory(employeeId, taskId);
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, task);
+            return response;
+        }
+
+        [Route("api/TaskHistoryUpdate/")]
+        public HttpResponseMessage PutTeamHistory([FromBody] List<TaskHistory> th)
+        {
+            var taskHistory = TaskHistoryRepository.UpdateTaskHistory(th);
+            HttpResponseMessage Response = Request.CreateResponse(HttpStatusCode.OK, taskHistory);
+            return Response;
+        }
+
 
         #endregion
 

@@ -332,6 +332,7 @@
     <Compile Include="TaskLog.cs">
       <DependentUpon>synupModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="TaskStateEnum.cs" />
     <Compile Include="Team.cs">
       <DependentUpon>synupModel.tt</DependentUpon>
     </Compile>

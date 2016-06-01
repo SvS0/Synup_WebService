@@ -17,12 +17,12 @@ namespace synup_webService
     {
         public string id_employee { get; set; }
         public string id_task { get; set; }
-        public Nullable<System.DateTime> startDate { get; set; }
+        public System.DateTime startDate { get; set; }
         public Nullable<System.DateTime> finishDate { get; set; }
         public string comment { get; set; }
-        public byte isFinished { get; set; }
         public int id { get; set; }
-    
+        public byte isFinished { get; set; }
+
         [JsonIgnore]
         public virtual Employee Employee { get; set; }
         [JsonIgnore]

@@ -11,17 +11,41 @@ namespace synup_webService.Models
 
         public static List<Task> GetInsertedTask(string employeeId, int first, int last)
         {
-            return _dataContext.spTasklogI(employeeId, first, last).ToList();
+            List<Task> _tasks;
+
+            using (var _dataContext = new synupEntities())
+            {
+                _tasks = new List<Task>();
+                _tasks = _dataContext.spTasklogI(employeeId, first, last).ToList();
+            }
+
+            return _tasks;
         }
 
         public static List<Task> GetUpdatedTask(string employeeId, int first, int last)
         {
-            return _dataContext.spTasklogU(employeeId, first, last).ToList();
+            List<Task> _tasks;
+
+            using (var _dataContext = new synupEntities())
+            {
+                _tasks = new List<Task>();
+                _tasks = _dataContext.spTasklogU(employeeId, first, last).ToList();
+            }
+
+            return _tasks;
         }
 
         public static List<Task> GetDeletedTask(string employeeId, int first, int last)
         {
-            return _dataContext.spTasklogD(employeeId, first, last).ToList();
+            List<Task> _tasks;
+
+            using (var _dataContext = new synupEntities())
+            {
+                _tasks = new List<Task>();
+                _tasks = _dataContext.spTasklogD(employeeId, first, last).ToList();
+            }
+
+            return _tasks;
         }
     }
 }

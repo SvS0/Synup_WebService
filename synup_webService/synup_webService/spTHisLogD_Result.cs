@@ -19,6 +19,6 @@ namespace synup_webService
         public Nullable<int> startDate { get; set; }
         public Nullable<int> finishDate { get; set; }
         public Nullable<int> comment { get; set; }
-        public Nullable<int> isFinished { get; set; }
+        public int isFinished { get; set; }
     }
 }

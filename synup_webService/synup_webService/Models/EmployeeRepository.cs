@@ -11,22 +11,54 @@ namespace synup_webService.Models
 
         public static List<Employee> GetInsertedEmployee(int first, int last)
         {
-            return _dataContext.spEmpLogI(first, last).ToList();
+            List<Employee> _employees;
+
+            using (var _dataContext = new synupEntities())
+            {
+                _employees = new List<Employee>();
+                _employees = _dataContext.spEmpLogI(first, last).ToList();
+            }
+
+            return _employees;
         }
 
         public static List<Employee> GetUpdatedEmployee(int first, int last)
         {
-            return _dataContext.spEmpLogU(first, last).ToList();
+            List<Employee> _employees;
+
+            using (var _dataContext = new synupEntities())
+            {
+                _employees = new List<Employee>();
+                _employees = _dataContext.spEmpLogU(first, last).ToList();
+            }
+
+            return _employees;
         }
 
         public static List<Employee> GetDeletedEmployee(int first, int last)
         {
-            return _dataContext.spEmpLogD(first, last).ToList();
+            List<Employee> _employees;
+
+            using (var _dataContext = new synupEntities())
+            {
+                _employees = new List<Employee>();
+                _employees = _dataContext.spEmpLogD(first, last).ToList();
+            }
+
+            return _employees;
         }
 
         public static List<Employee> GetLogin(string username, string password)
         {
-            return _dataContext.spLogin(username, password).ToList();
+            List<Employee> _employees;
+
+            using (var _dataContext = new synupEntities())
+            {
+                _employees = new List<Employee>();
+                _employees = _dataContext.spLogin(username, password).ToList();
+            }
+
+            return _employees;
         }
 
     }
